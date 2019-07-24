@@ -1,0 +1,4 @@
+{
+    "portNum": "5000",
+    "connectionString": "mongodb://localhost/vidlyApp"
+}
