@@ -1,7 +1,7 @@
 const dbRental = require('../../models/rental').rent
 
 module.exports = (req, res) => {
-    dbRental.find({}, (err, data) => {
+    dbRental.find().sort('-dateOut', (err, data) => {
         if (err) {
             res.json({
                 success: false,

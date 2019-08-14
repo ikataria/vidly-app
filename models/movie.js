@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
-const { genreSchema } = require('./genre')
+const genreSchema = require('./genre').genreSchema
 
-const movie = new mongoose.Schema({
+const movieSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true,
@@ -25,4 +25,7 @@ const movie = new mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('Movie', movie)
+movie = mongoose.model('movie', movieSchema)
+
+exports.movie = movie
+exports.movieSchema = movieSchema

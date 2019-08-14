@@ -14,4 +14,7 @@ router.use('/movie', movie)
 const rent = require('./rental/routes')
 router.use('/rental', rent)
 
+const user = require('./user/routes')
+router.use('/user', user)
+
 module.exports = router
