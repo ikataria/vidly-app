@@ -4,6 +4,8 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const config = require('./config/config.json')
 const app = express()
+const helmet = require('helmet')
+const compression = require('compression')
 
 // Fawn.init(mongoose)
 
@@ -28,6 +30,9 @@ app.use(function(err, req, res, next) {
         err: "DB_ERR_2"
     })
 })
+
+app.use(helmet())
+app.use(compression())
 
 app.listen(config.portNum)
 console.log('listening on port 5000')
